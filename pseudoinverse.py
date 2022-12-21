@@ -7,7 +7,13 @@ def run(x, y):
     n = np.matrix.getI((xt*np.matrix(x)))
     return n*(xt*np.matrix(y))
 
+
+def convert_for_log(y):
+    return -math.log(1 / y - 1)
+
 x = np.matrix('-2 1; 0 1; 1 1')
-y = np.matrix('0.1; 0.7; 0.9')
+
+#print(convert_for_log(0.9))
+y = np.matrix('-2.1972245773362196; 0.8472978603872036; 2.197224577336219')
 
 print(run(x, y))
